@@ -22,9 +22,9 @@ print('''
 print('"MAY GOD BELESS YOU!!"')
 usernames = passwords = names = []
 
-
-def sign_up():  # Handled by Abhinav
-    ##make a new  user singin data in another table which should be hidden for users##
+#Mske a new signin and use the same UserID & Password to login 
+#To use a new UserID & Password:- Exit and Create new singin
+def sign_up(): 
     global usernames
     global passwords
     # Appending User's:- name, username & password to the list
@@ -33,7 +33,7 @@ def sign_up():  # Handled by Abhinav
     passwords.append(input("Choose Your Password: "))
 
 
-def login():  # Handled by Abhinav
+def login():
     username = input("Enter Your Username: ")
     password = input("Enter Your Password: ")
     # Checking if the username and password provided are corect or not
@@ -62,7 +62,7 @@ def available_functions():  # list of all functions
 
 
 def choices():
-    if choice_lst == 1:  # Handled by Aakash
+    if choice_lst == 1: 
         Patient_Name = input('Enter Patient Name:')
         Patient_Age = int(input('Enter Age:'))
         Patient_Disease_Illness = input('Enter The Problem/Disease:')
@@ -73,7 +73,7 @@ def choices():
         c1.execute(sql_insert, P_Details)
         print('SUCCESSFULLY REGISTERED')
         conn.commit()
-    elif choice_lst == 2:  # Handled by Aakash
+    elif choice_lst == 2: 
         Doctor_Name = input('Enter Doctor Name:')
         Doctor_Age = int(input('Enter Age:'))
         Doctor_Department = input('Enter the Department:')
@@ -83,7 +83,7 @@ def choices():
         c1.execute(sql_insert, d_details)
         print('SUCCESSFULLY REGISTERED')
         conn.commit()
-    elif choice_lst == 3:  # Handled by Aakash
+    elif choice_lst == 3:  
         Worker_Name = input('Enter Worker Name:')
         Worker_Age = int(input('Enter Age:'))
         Work_Description = input('Enter Your Area Of Work:')
@@ -94,26 +94,26 @@ def choices():
         c1.execute(sql_insert, w_details)
         print('SUCCESSFULLY REGISTERED')
         conn.commit()
-    elif choice_lst == 4:  # Handled by Gowri
+    elif choice_lst == 4: 
         sql_patient = 'SELECT * FROM Patient_details '
         c1.execute(sql_patient)
         pfile = c1.fetchall()
         for i in pfile:
             print(i)
-    elif choice_lst == 5:  # Handled by Gowri
+    elif choice_lst == 5: 
         sql_doctor = 'SELECT * FROM Doctor_details '
         c1.execute(sql_doctor)
         dfile = c1.fetchall()
         for i in dfile:
             print(i)
 
-    elif choice_lst == 6:  # Handled by Gowri
+    elif choice_lst == 6: 
         sql_worker = 'SELECT * FROM Worker_details '
         c1.execute(sql_worker)
         Staff = c1.fetchall()
         for i in Staff:
             print(i)
-    elif choice_lst == 7:  # Handled by Nipun
+    elif choice_lst == 7:  
         sql_specific_patient = input("Enter Patient Name:")
         patient = 'SELECT * FROM Patient_details WHERE Patient_Name =("{}")'.format(
             sql_specific_patient)
@@ -121,7 +121,7 @@ def choices():
         pfile = c1.fetchall()
         for p in pfile:
             print(p)
-    elif choice_lst == 8:  # Handled by Nipun
+    elif choice_lst == 8: 
         sql_specific_doctor = input("Enter Doctor Name: ")
         doc = 'SELECT * FROM Doctor_details WHERE Doctor_Name=("{}")'.format(
             sql_specific_doctor)
@@ -129,7 +129,7 @@ def choices():
         dfile = c1.fetchall()
         for d in dfile:
             print(i)
-    elif choice_lst == 9:  # Handled by Nipun
+    elif choice_lst == 9: 
         sql_specific_worker = input("Enter Worker Name:")
         worker = 'SELECT * FROM Worker_details WHERE Worker_Name=("{}")'.format(
             sql_specific_worker)
@@ -137,13 +137,13 @@ def choices():
         wfile = c1.fetchall()
         for w in wfile:
             print(i)
-    elif choice_lst == 10:  # Handled by Abhinav
+    elif choice_lst == 10:
         print("End of program.")
         exit()
 
 
 entries_available_functions = 0  # No. of times available_functions are opened
-while True:  # Handled by All Four
+while True: 
     choice = input("""CHOOSE:
     =>(1)Sign Up[Enter 1]
     =>(2)Login[Enter 2]
